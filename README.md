@@ -25,16 +25,38 @@ Phân chia Petri nets 1-safe:
          'graph': NetworkX DiGraph,
          'initial_marking': {'p1': 1, 'p2': 0}
      }
-## Cài đặt thư viện python
-- pip install -r requirements.txt (hoặc lệnh khác)
+## Tải code và Cài đặt thư viện python
+- Tải hết folder src và model
+- lệnh cài thư viện từ file txt: pip install -r requirements.txt (hoặc lệnh khác)
 - Đọc assignment PDF ("mm-251-assignment.pdf")
 - Input chung: Net từ parse_pnml(file) (dict: places, transitions, arcs, initial_marking).
 
+## Quan trọng cho các task: CÁCH ĐỂ LẤY INPUT NET
+cú pháp
+
+     ```python
+     from src.parser import parse_pnml
+     net = parse_pnml("models/simple.pnml")
+
+ví dụ
+
+from src.parser import parse_pnml
+
+  def compute_reachable(net):
+      ....
+
+  net = parse_pnml("models/simple.pnml") # hoặc cái pnml khác
+  
+  reachable = compute_reachable(net)
+  
+  print(f"Total reachable markings: {len(reachable)}")
+
+     
 ## Task 2 – Explicit computation of reachable markings (branch feature/task2)
 - Nhiệm vụ chính: Implement BFS or DFS để enumerate reachable markings từ initial. 
 - Output: List markings. Compare time/memory với Task 3.
 
-File code cần tải: 
+File code: 
 - src/task2_explicit_bfs.py (export hàm compute_reachable(net)).
 - Examples PNML từ pnml.org (ví dụ philosophers.pnml – có deadlock: https://www.pnml.org/version-2009/examples/philo.pnml).
 
@@ -60,7 +82,7 @@ Nhiệm vụ chính:
 - Encode markings bằng BDD (places as variables, 0/1 tokens). Iterative fixed-point để build reachable set.
 - Output: BDD, count markings, compare time/memory với Task 2.
 
-File code cần tải:
+File code:
 - src/task3_symbolic_bdd.py (export hàm symbolic_reachable(net)).
 - Examples PNML từ pnml.org (ví dụ philosophers.pnml – có deadlock: https://www.pnml.org/version-2009/examples/philo.pnml).
 
