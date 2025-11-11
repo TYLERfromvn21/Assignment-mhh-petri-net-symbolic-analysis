@@ -1,0 +1,5 @@
+lxml
+networkx
+dd>=0.2.0
+pulp
+# matplotlib
