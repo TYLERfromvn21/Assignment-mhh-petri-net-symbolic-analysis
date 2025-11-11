@@ -10,6 +10,9 @@ Phân chia Petri nets 1-safe:
 4. Deadlock detection (ILP + BDD)          1 người
 5. Optimization over reachable markings    1 người
 
+## Slide lý thuyết tham khảo
+- https://www.pnml.org/papers/PNML-Tutorial.pdf
+
 ### Task 1 – Parser PNML
 - **PNML (Petri Net Markup Language)** là **chuẩn XML quốc tế (ISO/IEC 15909-2)** để lưu Petri Net.  
 - **File `.pnml`** chứa: `<place>`, `<transition>`, `<arc>`, `<initialMarking>`.  
@@ -58,7 +61,7 @@ from src.parser import parse_pnml
 
 File code: 
 - src/task2_explicit_bfs.py (export hàm compute_reachable(net)).
-- Examples PNML từ pnml.org (ví dụ philosophers.pnml – có deadlock: https://www.pnml.org/version-2009/examples/philo.pnml).
+- Examples PNML (ví dụ philosophers.pnml – có deadlock ở trên).
 
 
 Input: Net từ parser task 1 (initial_marking).
@@ -84,7 +87,7 @@ Nhiệm vụ chính:
 
 File code:
 - src/task3_symbolic_bdd.py (export hàm symbolic_reachable(net)).
-- Examples PNML từ pnml.org (ví dụ philosophers.pnml – có deadlock: https://www.pnml.org/version-2009/examples/philo.pnml).
+- Examples PNML (ví dụ philosophers.pnml – có deadlock ở trên).
 
 Input: Net từ parser.
 
@@ -111,7 +114,7 @@ Nhiệm vụ chính:
 File code: 
 - src/task4_deadlock_ilp.py (export hàm detect_deadlock(net, bdd_reach)).
 - PuLP (requirements.txt).
-- Examples PNML từ pnml.org (ví dụ philosophers.pnml – có deadlock: https://www.pnml.org/version-2009/examples/philo.pnml).
+- Examples PNML (ví dụ philosophers.pnml – có deadlock ở trên).
 
 Input: Net, BDD reachable từ Task 3.
 
@@ -138,7 +141,7 @@ Nhiệm vụ chính:
 File code: 
 - src/task5_optimize.py (export hàm optimize_reachable(net, bdd_reach, c)).
 - PuLP từ requirement.txt. 
-- Examples PNML từ pnml.org (ví dụ philosophers.pnml – có deadlock: https://www.pnml.org/version-2009/examples/philo.pnml).
+- Examples PNML (ví dụ philosophers.pnml – có deadlock ở trên).
 - Tạo c random (e.g., [1,2,...] cho places).
 
 Input: Net, BDD reachable, vector c.
