@@ -10,6 +10,6 @@ Phân tích Petri nets 1-safe:
 4. Deadlock detection (ILP + BDD)
 5. Optimization over reachable markings
 
-## Cài đặt
+## Cài đặt thư viện python
 bash
 pip install -r requirements.txt
